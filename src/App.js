@@ -1,8 +1,13 @@
+import Headers from "./components/Headers";
+
 function App() {
   return (
-    <div className="conatiner">
-      <h1>Hello World</h1>
-    </div>
+    <>
+      <Headers />
+      <div className="conatiner">
+        <h1>Hello World</h1>
+      </div>
+    </>
   );
 }
 
