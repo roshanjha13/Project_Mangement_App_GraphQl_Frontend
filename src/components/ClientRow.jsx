@@ -2,10 +2,23 @@ import React from "react";
 import { FaTrash } from "react-icons/fa";
 import { useMutation } from "@apollo/client";
 import { DELETE_CLIENT } from "../mutations/clientMutation";
+import { GET_CLIENTS } from "../queries/clientQueries";
 
 const ClientRow = ({ client }) => {
   const [deleteClient] = useMutation(DELETE_CLIENT, {
     variables: { id: client.id },
+    update(cache, { data: { deleteClient } }) {
+      const { clients } = cache.readQuery({
+        query: GET_CLIENTS,
+      });
+      cache.writeQuery({
+        query: GET_CLIENTS,
+        data: {
+          clients: clients.filter((client) => client.id !== deleteClient.id),
+        },
+      });
+    },
+    // refetchQueries: [{ query: GET_CLIENTS }], --> this is for not load the page
   });
 
   return (
