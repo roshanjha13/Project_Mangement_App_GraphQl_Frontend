@@ -1,8 +1,8 @@
-import Client from "./components/Client";
-import Project from "./components/Project";
-import Headers from "./components/Headers";
 import { ApolloProvider, ApolloClient, InMemoryCache } from "@apollo/client";
-import AddClientModal from "./components/AddClientModal";
+import Project from "./components/project/Project";
+import Client from "./components/client/Client";
+import AddClientModal from "./components/client/AddClientModal";
+import Headers from "./components/header/Headers";
 
 const cache = new InMemoryCache({
   typePolicies: {

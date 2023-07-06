@@ -1,8 +1,8 @@
 import React from "react";
 import { FaTrash } from "react-icons/fa";
 import { useMutation } from "@apollo/client";
-import { DELETE_PROJECT } from "../mutations/projectMutation";
-import { GET_Projects } from "../queries/projectQueries";
+import { DELETE_PROJECT } from "../../mutations/projectMutation";
+import { GET_Projects } from "../../queries/projectQueries";
 
 const ProjectRow = ({ project }) => {
   const [deleteProject] = useMutation(DELETE_PROJECT, {
