@@ -44,7 +44,7 @@ const AddClientModal = () => {
     <>
       <button
         type="button"
-        className="btn btn-secondary"
+        className="btn btn-secondary m-2"
         data-bs-toggle="modal"
         data-bs-target="#addClientModal">
         <div className="d-flex align-items-center">
