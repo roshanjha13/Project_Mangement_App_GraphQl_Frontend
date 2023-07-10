@@ -30,7 +30,7 @@ const Project = () => {
           <p className="lead">{data.project.status}</p>
 
           <ClientInfo client={data.project.client} />
-          <EditProjectButton client={data.project} />
+          <EditProjectButton project={data.project} />
 
           <DeleteProjectButton projectId={data.project.id} />
         </div>
